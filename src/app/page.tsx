@@ -2,20 +2,24 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center p-8 bg-slate-50">
-      <h1 className="text-3xl font-bold text-slate-800 mb-4">予約システム</h1>
-      <p className="text-slate-600 mb-8 max-w-md text-center">
-        オンラインで簡単に予約できます。日付と時間を選んでご予約ください。
-      </p>
+    <main className="min-h-screen flex flex-col items-center justify-center p-8 bg-sky-50">
+      <div className="text-center mb-8">
+        <p className="text-sky-400 text-sm tracking-widest uppercase mb-2">Salon</p>
+        <h1 className="text-3xl font-light text-slate-700 mb-4 tracking-wide">ご予約</h1>
+        <p className="text-slate-500 max-w-md mx-auto leading-relaxed">
+          ご希望の日時をお選びいただき、<br />
+          オンラインでお手軽にご予約いただけます。
+        </p>
+      </div>
       <Link
         href="/book"
-        className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+        className="px-8 py-3 bg-sky-400 text-white rounded-full hover:bg-sky-500 transition-colors shadow-sm"
       >
         予約する
       </Link>
       <Link
         href="/admin"
-        className="mt-4 text-slate-500 hover:text-slate-700 text-sm"
+        className="mt-6 text-sky-500 hover:text-sky-600 text-sm"
       >
         管理画面へ
       </Link>

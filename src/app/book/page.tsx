@@ -120,22 +120,22 @@ export default function BookPage() {
   const selectedResource = resources.find((r) => r.id === resourceId);
 
   return (
-    <main className="min-h-screen bg-slate-50 py-12 px-4">
+    <main className="min-h-screen bg-sky-50 py-12 px-4">
       <div className="max-w-2xl mx-auto">
         <div className="mb-8">
-          <Link href="/" className="text-slate-500 hover:text-slate-700 text-sm">
+          <Link href="/" className="text-sky-500 hover:text-sky-600 text-sm">
             ← トップに戻る
           </Link>
         </div>
 
-        <h1 className="text-2xl font-bold text-slate-800 mb-6">ご予約</h1>
+        <h1 className="text-2xl font-light text-slate-700 mb-6">ご予約</h1>
 
         <div className="flex gap-2 mb-8">
           {STEPS.map((s, i) => (
             <div
               key={s}
               className={`flex-1 h-1 rounded ${
-                i + 1 <= step ? "bg-blue-600" : "bg-slate-200"
+                i + 1 <= step ? "bg-sky-400" : "bg-sky-200"
               }`}
               title={s}
             />
@@ -143,8 +143,8 @@ export default function BookPage() {
         </div>
 
         {step === 1 && (
-          <div className="bg-white rounded-lg shadow p-6">
-            <h2 className="text-lg font-semibold text-slate-800 mb-4">日付を選択</h2>
+          <div className="bg-white rounded-xl shadow-sm p-6 border border-sky-100">
+            <h2 className="text-lg font-medium text-slate-700 mb-4">日付を選択</h2>
             <input
               type="date"
               value={date}
@@ -156,7 +156,7 @@ export default function BookPage() {
               type="button"
               onClick={() => date && setStep(2)}
               disabled={!date}
-              className="mt-4 w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+              className="mt-4 w-full py-2 bg-sky-400 text-white rounded-full hover:bg-sky-500 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
             >
               次へ
             </button>
@@ -164,8 +164,8 @@ export default function BookPage() {
         )}
 
         {step === 2 && (
-          <div className="bg-white rounded-lg shadow p-6">
-            <h2 className="text-lg font-semibold text-slate-800 mb-4">リソースを選択</h2>
+          <div className="bg-white rounded-xl shadow-sm p-6 border border-sky-100">
+            <h2 className="text-lg font-medium text-slate-700 mb-4">メニュー・席を選択</h2>
             <p className="text-slate-600 mb-4">日付: {date}</p>
             <div className="space-y-2">
               {resources.map((r) => (
@@ -176,10 +176,10 @@ export default function BookPage() {
                     setResourceId(r.id);
                     setSlot(null);
                   }}
-                  className={`w-full text-left p-4 rounded-lg border-2 transition-colors cursor-pointer ${
+                  className={`w-full text-left p-4 rounded-xl border-2 transition-colors cursor-pointer ${
                     resourceId === r.id
-                      ? "border-blue-600 bg-blue-50 ring-2 ring-blue-400"
-                      : "border-slate-200 hover:border-slate-400 hover:bg-slate-50"
+                      ? "border-sky-400 bg-sky-50 ring-2 ring-sky-300"
+                      : "border-sky-100 hover:border-sky-300 hover:bg-sky-50/50"
                   }`}
                 >
                   <span className="font-medium">{r.name}</span>
@@ -202,7 +202,7 @@ export default function BookPage() {
                 type="button"
                 onClick={() => resourceId && setStep(3)}
                 disabled={!resourceId}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 cursor-pointer"
+                className="px-4 py-2 bg-sky-400 text-white rounded-full hover:bg-sky-500 disabled:opacity-50 cursor-pointer"
               >
                 次へ
               </button>
@@ -211,8 +211,8 @@ export default function BookPage() {
         )}
 
         {step === 3 && (
-          <div className="bg-white rounded-lg shadow p-6">
-            <h2 className="text-lg font-semibold text-slate-800 mb-4">時間を選択</h2>
+          <div className="bg-white rounded-xl shadow-sm p-6 border border-sky-100">
+            <h2 className="text-lg font-medium text-slate-700 mb-4">時間を選択</h2>
             <p className="text-slate-600 mb-4">
               {date} / {selectedResource?.name}
             </p>
@@ -225,10 +225,10 @@ export default function BookPage() {
                     type="button"
                     key={`${s.start}-${s.end}`}
                     onClick={() => setSlot(s)}
-                    className={`p-3 rounded-lg border-2 text-sm cursor-pointer ${
+                    className={`p-3 rounded-xl border-2 text-sm cursor-pointer ${
                       slot?.start === s.start
-                        ? "border-blue-600 bg-blue-50"
-                        : "border-slate-200 hover:border-slate-300"
+                        ? "border-sky-400 bg-sky-50"
+                        : "border-sky-100 hover:border-sky-300"
                     }`}
                   >
                     {s.start}
@@ -251,7 +251,7 @@ export default function BookPage() {
                 type="button"
                 onClick={() => slot && setStep(4)}
                 disabled={!slot}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 cursor-pointer"
+                className="px-4 py-2 bg-sky-400 text-white rounded-full hover:bg-sky-500 disabled:opacity-50 cursor-pointer"
               >
                 次へ
               </button>
@@ -260,8 +260,8 @@ export default function BookPage() {
         )}
 
         {step === 4 && (
-          <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow p-6">
-            <h2 className="text-lg font-semibold text-slate-800 mb-4">お客様情報</h2>
+          <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow-sm p-6 border border-sky-100">
+            <h2 className="text-lg font-medium text-slate-700 mb-4">お客様情報</h2>
             <p className="text-slate-600 mb-4">
               {date} {selectedResource?.name} {slot?.start}–{slot?.end}
             </p>
@@ -315,7 +315,7 @@ export default function BookPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50"
+                className="px-4 py-2 bg-sky-400 text-white rounded-full hover:bg-sky-500 disabled:opacity-50"
               >
                 {loading ? "予約中..." : "予約確定"}
               </button>
@@ -324,7 +324,7 @@ export default function BookPage() {
         )}
 
         {step === 5 && reservationId && (
-          <div className="bg-white rounded-lg shadow p-6 text-center">
+          <div className="bg-white rounded-xl shadow-sm p-6 text-center border border-sky-100">
             <div className="text-green-600 text-5xl mb-4">✓</div>
             <h2 className="text-xl font-bold text-slate-800 mb-2">予約が完了しました</h2>
             <p className="text-slate-600 mb-6">
@@ -340,13 +340,13 @@ export default function BookPage() {
             </p>
             <Link
               href="/book"
-              className="inline-block px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+              className="inline-block px-6 py-2 bg-sky-400 text-white rounded-full hover:bg-sky-500"
             >
               別の予約をする
             </Link>
             <Link
               href="/"
-              className="block mt-4 text-slate-500 hover:text-slate-700"
+              className="block mt-4 text-sky-500 hover:text-sky-600"
             >
               トップに戻る
             </Link>

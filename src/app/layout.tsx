@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "予約システム",
-  description: "汎用予約管理システム",
+  title: "ご予約 | Salon",
+  description: "オンライン予約",
 };
 
 export default function RootLayout({

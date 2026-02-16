@@ -34,9 +34,9 @@ function LoginForm() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-lg shadow p-8 w-full max-w-sm">
-        <h1 className="text-xl font-bold text-slate-800 mb-6">管理画面ログイン</h1>
+    <div className="min-h-screen bg-sky-50 flex items-center justify-center p-4">
+      <div className="bg-white rounded-xl shadow-sm p-8 w-full max-w-sm border border-sky-100">
+        <h1 className="text-xl font-medium text-slate-700 mb-6">管理画面ログイン</h1>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-slate-700 mb-1">パスワード</label>
@@ -52,7 +52,7 @@ function LoginForm() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50"
+            className="w-full py-2 bg-sky-400 text-white rounded-full hover:bg-sky-500 disabled:opacity-50"
           >
             {loading ? "ログイン中..." : "ログイン"}
           </button>
@@ -67,7 +67,7 @@ function LoginForm() {
 
 export default function AdminLoginPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-slate-50 flex items-center justify-center">読み込み中...</div>}>
+    <Suspense fallback={<div className="min-h-screen bg-sky-50 flex items-center justify-center">読み込み中...</div>}>
       <LoginForm />
     </Suspense>
   );

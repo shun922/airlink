@@ -17,40 +17,40 @@ export default function AdminLayout({
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
-      <nav className="bg-white border-b border-slate-200 px-6 py-4">
+    <div className="min-h-screen bg-sky-50">
+      <nav className="bg-white border-b border-sky-100 px-6 py-4">
         <div className="flex items-center justify-between max-w-6xl mx-auto">
-          <Link href="/admin" className="text-xl font-bold text-slate-800">
+          <Link href="/admin" className="text-xl font-medium text-slate-700">
             管理画面
           </Link>
           <div className="flex gap-4">
             <Link
               href="/admin"
-              className="text-slate-600 hover:text-slate-900"
+              className="text-slate-600 hover:text-sky-600"
             >
               ダッシュボード
             </Link>
             <Link
               href="/admin/resources"
-              className="text-slate-600 hover:text-slate-900"
+              className="text-slate-600 hover:text-sky-600"
             >
               リソース
             </Link>
             <Link
               href="/admin/reservations"
-              className="text-slate-600 hover:text-slate-900"
+              className="text-slate-600 hover:text-sky-600"
             >
               予約一覧
             </Link>
             <Link
               href="/admin/reservations/calendar"
-              className="text-slate-600 hover:text-slate-900"
+              className="text-slate-600 hover:text-sky-600"
             >
               カレンダー
             </Link>
             <Link
               href="/admin/settings"
-              className="text-slate-600 hover:text-slate-900"
+              className="text-slate-600 hover:text-sky-600"
             >
               設定
             </Link>
